@@ -30,7 +30,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <TextBlock Text="{Binding LocalizedName}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding LocalizedName, StringFormat={}{0}\,}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding AdministrativeArea.ID, StringFormat={}{0}\,}" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Country.LocalizedName}"/>
+                            </StackPanel>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
